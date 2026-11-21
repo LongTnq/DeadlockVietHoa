@@ -3,6 +3,9 @@
 Tài liệu này mô tả cách đưa mod **Deadlock Vietnamese Localization** lên
 GameBanana để nó xuất hiện trong **Deadlock Mod Manager (DMM)**.
 
+> **Game ID trên GameBanana: `20948`** — trang: https://gamebanana.com/games/20948
+> Section: `Mods` → https://gamebanana.com/mods/games/20948
+
 ## 0. Kiến thức nền
 
 ### GameBanana có phải nguồn của DMM không?
@@ -114,9 +117,14 @@ Vào [gamebanana.com](https://gamebanana.com), đăng ký tài khoản miễn ph
 | Trường | Nội dung |
 |---|---|
 | **Title** | `Deadlock - Vietnamese Localization` |
-| **Category** | Mods → *Localization / UI* (chọn category sát nhất) |
-| **Homepage** | (để trống hoặc link repo GitHub) |
+| **Category** | `Other/Misc` (mod ngôn ngữ không thuộc nhóm nào khác; có thể tick thêm `Quality of Life/Fixes`) |
+| **Homepage** | `https://github.com/LongTnq/DeadlockVietHoa` |
 | **Description** | xem mẫu bên dưới |
+
+> GameBanana có các category Deadlock sau: `Animations`, `Gameplay
+> Modifications`, `HUD`, `Maps`, `Model Replacement`, `Other/Misc`,
+> `Quality of Life/Fixes`. Mod dịch ngôn ngữ không thuộc category nào chuyên
+> biệt → dùng `Other/Misc`.
 
 **Mẫu description:**
 
@@ -143,9 +151,14 @@ Hoặc cài tay: giải nén, copy 2 file `.vpk` vào
 `Steam\steamapps\common\Deadlock\game\citadel\addons\`, rồi thêm dòng
 `Game citadel/addons` vào `gameinfo.gi` (trước `Game citadel`).
 
-Gói có 2 biến thể:
-- `vpk-english/` — giữ ngôn ngữ English trong game, nội dung hiện tiếng Việt
-- `vpk-vietnamese/` — chọn "Tiếng Việt" trong Settings > Language
+## Hai biến thể
+
+- `deadlock-vietnamese-english.zip` — **khuyên dùng**. Giữ ngôn ngữ game là
+  English, nội dung hiển thị tiếng Việt. Không cần sửa `gameinfo.gi`.
+- `deadlock-vietnamese-vietnamese.zip` — chọn "Tiếng Việt" trong
+  Settings > Language. Cần game hỗ trợ ngôn ngữ `vietnamese`.
+
+Chỉ cài **một** trong hai biến thể.
 
 ## Ghi chú
 
@@ -156,13 +169,23 @@ Gói có 2 biến thể:
 ### Bước 3 — Files
 
 1. Vào mục **Files** của submission.
-2. Upload `release/deadlock-vietnamese.zip`.
-3. **Đặt tên file**: `Deadlock Vietnamese Localization v1.0.zip`
+2. Upload **cả 2 file** (mỗi biến thể một archive riêng):
+   - `release/deadlock-vietnamese-english.zip`
+   - `release/deadlock-vietnamese-vietnamese.zip`
+3. **Đặt tên file hiển thị:**
+   - `Deadlock Vietnamese Localization (English UI) v1.0.zip`
+   - `Deadlock Vietnamese Localization (Vietnamese UI) v1.0.zip`
 4. **Loại file**: chọn `Mod` / `Archive`.
 5. Nếu GameBanana hiện nút **"Deadlock Mod Manager 1-click install"** →
    bật lên. Đây là nút mà DMM bắt tay vào.
 
-> **Quan trọng**: ZIP phải chứa `.vpk` ở **trong thư mục con** hoặc ở gốc —
+> **Tại sao tách 2 file riêng thay vì 1 ZIP gộp?**
+> GameBanana khuyến nghị tách mỗi biến thể cùng "slot" thành archive riêng
+> để 1-click installer cài được đúng biến thể người dùng chọn. DMM cũng tự
+> xử lý VPK trùng tên (đổi thành `pak01-blue_dir.vpk`, `pak01-blue-2_dir.vpk`)
+> nhưng người dùng sẽ phải tự chọn file trong DMM.
+>
+> **Cấu trúc ZIP:** file `.vpk` nằm ở **gốc** archive (không cần thư mục con).
 > DMM giải nén rồi tự tìm mọi file `.vpk` bên trong và copy vào
 > `citadel/addons/`. Xem source `vpk_manager/operations.rs`:
 > `collect_vpks_from_dir()` quét đệ quy mọi `.vpk`.
@@ -178,9 +201,20 @@ Cần chụp:
 
 > **Lưu ý về rule `R-DL.847` (AI-generated content)**: bản dịch của mod này
 > được tạo với sự hỗ trợ của AI. Cần **khai báo trung thực** trong description
-> rằng bản dịch có sự hỗ trợ của AI. Rule này cấm AI-generated *asset*
-> (render, texture, model, ảnh chụp giả), không cấm AI hỗ trợ dịch thuật
-> khi được khai báo.
+> rồi điền mục **AI Usage** trong tab *Development* / *Technical* của form
+> submit. GameBanana có sẵn các mức độ:
+>
+> | Mục | Mức nên chọn |
+> |---|---|
+> | Art/Visuals | `None` |
+> | Code/Logic | `Major` (toàn bộ pipeline dịch + build script do AI viết) |
+> | Audio | `None` |
+> | Concept/Planning/Design | `Moderate` |
+> | Submission Elements | `Moderate` (mô tả, ảnh chụp giúp bởi AI) |
+>
+> Rule này cấm AI-generated *asset* (render, texture, model, ảnh chụp giả),
+> không cấm AI hỗ trợ dịch thuật khi được khai báo. **Ảnh chụp trong game
+> phải do người chụp thật** — không dùng ảnh AI render.
 
 ### Bước 5 — Submit
 

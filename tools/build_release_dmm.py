@@ -293,10 +293,35 @@ def main():
                 arc = os.path.relpath(full, PKG).replace('\\', '/')
                 z.write(full, arc)
 
-    log('    ZIP: %s bytes -> %s' % (f'{os.path.getsize(ZIP):,}', ZIP))
+    log('    ZIP gop: %s bytes -> %s' % (f'{os.path.getsize(ZIP):,}', ZIP))
+
+    # GameBanana khuyen nghi tach moi bien the thanh mot archive rieng
+    # (variants cung slot gay loi cho 1-click installer).
+    log('  Nen ZIP tung bien the...')
+
+    for variant_dir, _suffix, _lang in VARIANTS:
+        vdir = os.path.join(PKG, 'vpk-' + variant_dir)
+        out_zip = os.path.join(RELEASE,
+                               'deadlock-vietnamese-%s.zip' % variant_dir)
+
+        if os.path.exists(out_zip):
+            os.remove(out_zip)
+
+        with zipfile.ZipFile(out_zip, 'w', zipfile.ZIP_DEFLATED) as z:
+            for name in sorted(os.listdir(vdir)):
+                z.write(os.path.join(vdir, name), name)
+
+            z.write(os.path.join(PKG, 'README.md'), 'README.md')
+
+        log('    %s: %s bytes' % (os.path.basename(out_zip),
+                                  f'{os.path.getsize(out_zip):,}'))
+
     log('')
     log('=== HOAN TAT ===')
-    log('  Upload: %s' % ZIP)
+    log('  Upload len GameBanana (2 file rieng, de vao Files):')
+    for variant_dir, _suffix, _lang in VARIANTS:
+        log('    - deadlock-vietnamese-%s.zip' % variant_dir)
+    log('')
     log('  GameBanana -> Deadlock -> Mods -> Submit a new mod')
     log('')
 
