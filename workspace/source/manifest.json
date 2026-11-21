@@ -1,0 +1,68 @@
+[
+  {
+    "RelativePath": "citadel_attributes\\citadel_attributes_english.txt",
+    "FileName": "citadel_attributes_english.txt",
+    "FileSize": 129605,
+    "Sha256": "E9E5FDBDBB213BEC6E4140670B9E29096F5A534791E2678306AC44AA8443401D"
+  },
+  {
+    "RelativePath": "citadel_gc\\citadel_gc_english.txt",
+    "FileName": "citadel_gc_english.txt",
+    "FileSize": 15779,
+    "Sha256": "AC0120E8B7EB13A6B21A0D962393306FF8694CD58902C8A37AD7A3711AB70BE9"
+  },
+  {
+    "RelativePath": "citadel_gc_hero_names\\citadel_gc_hero_names_english.txt",
+    "FileName": "citadel_gc_hero_names_english.txt",
+    "FileSize": 10511,
+    "Sha256": "DAA5AA4808BF2ECBC299B4F1E6B459FC6D1EE6D47886BAD8054812388F0FCF5C"
+  },
+  {
+    "RelativePath": "citadel_gc_mod_names\\citadel_gc_mod_names_english.txt",
+    "FileName": "citadel_gc_mod_names_english.txt",
+    "FileSize": 22489,
+    "Sha256": "4C235A5DCC910E05AAB2AD8E48DC7BA722825764C7531E93778ABB732D9669D3"
+  },
+  {
+    "RelativePath": "citadel_generated_vo\\citadel_generated_vo_english.txt",
+    "FileName": "citadel_generated_vo_english.txt",
+    "FileSize": 5790760,
+    "Sha256": "A8CA66AB7267A81620C23CFD46AE9306613C5F0CFA1665DE7FB491D99ED2F876"
+  },
+  {
+    "RelativePath": "citadel_heroes\\citadel_heroes_english.txt",
+    "FileName": "citadel_heroes_english.txt",
+    "FileSize": 452808,
+    "Sha256": "1F5694E5B8D819BE35BF64864DF7851F204BACCFE6B9A0D273DC32231D1C96F3"
+  },
+  {
+    "RelativePath": "citadel_main\\citadel_main_english.txt",
+    "FileName": "citadel_main_english.txt",
+    "FileSize": 418338,
+    "Sha256": "A59EBD19C0EE1029D4AC1CE843A0B003B8C9A2B1EC81674AF8449A25576FEA8E"
+  },
+  {
+    "RelativePath": "citadel_mods\\citadel_mods_english.txt",
+    "FileName": "citadel_mods_english.txt",
+    "FileSize": 69553,
+    "Sha256": "64587F6F808127F665F10014B2D4176FDAD76E601D9E9CACF0D5DEC03A2993FE"
+  },
+  {
+    "RelativePath": "citadel_patch_notes\\citadel_patch_notes_english.txt",
+    "FileName": "citadel_patch_notes_english.txt",
+    "FileSize": 16093,
+    "Sha256": "BCADF188474EEFDCAC9A0D44C548E8B300ED5E627E940D8D765D96A9E4FA9DBE"
+  },
+  {
+    "RelativePath": "citadel_seasonal\\citadel_seasonal_english.txt",
+    "FileName": "citadel_seasonal_english.txt",
+    "FileSize": 2651,
+    "Sha256": "2D139281F7AB7F19FD4CAFFE0FA4E87F0300C4BBF66C39E5173EAEF8427106A9"
+  },
+  {
+    "RelativePath": "citadel_vdata\\accolades\\accolades_english.txt",
+    "FileName": "accolades_english.txt",
+    "FileSize": 7448,
+    "Sha256": "316CE79FB14A754ED37F7B320A8BB4DE8022AEFE4EE90B214C8B272AD3411D19"
+  }
+]

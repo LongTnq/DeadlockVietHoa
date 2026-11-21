@@ -1,0 +1,11 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/DeadlockVN.Application/DeadlockVN.Application.csproj" />
+    <Project Path="src/DeadlockVN.CLI/DeadlockVN.CLI.csproj" />
+    <Project Path="src/DeadlockVN.Core/DeadlockVN.Core.csproj" />
+    <Project Path="src/DeadlockVN.Infrastructure/DeadlockVN.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/DeadlockVN.UnitTests/DeadlockVN.UnitTests.csproj" />
+  </Folder>
+</Solution>

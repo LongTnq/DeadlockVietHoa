@@ -1,0 +1,40 @@
+# Build output
+bin/
+obj/
+output/
+.vs/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# API key cho provider dịch tự động (OpenRouter / OpenAI / Groq).
+# TUYỆT ĐỐI không commit — chứa thông tin bí mật.
+.env
+.env.*
+
+# Dữ liệu gốc trích xuất từ game (không commit — dung lượng lớn, cần license game)
+workspace/source/original/
+
+# Bản dịch tạm sinh khi build
+workspace/staging/
+
+# Bộ bản dịch tiếng Việt được xuất từ bản gốc.
+# File này chứa 91 457 entry (~31 MB nếu gộp, ~50 file nếu tách theo nhóm).
+# Nếu repo đã theo dõi bản dịch thì bỏ qua dòng này.
+workspace/translations/
+
+# Gói phát hành GameBanana (chứa VPK ~21 MB — sinh ra, không commit).
+release/
+
+# File tạm trong tools/ (log, cache, kết quả chạy script)
+tools/_*.log
+tools/_*.txt
+tools/_tr_*.json
+tools/_vo_state.json
+tools/_all_english.json
+tools/*.bak
+
+# File debug tạm trong workspace/
+workspace/*.log
+workspace/*.txt
