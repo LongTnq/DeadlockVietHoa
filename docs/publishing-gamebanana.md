@@ -126,6 +126,34 @@ Vào [gamebanana.com](https://gamebanana.com), đăng ký tài khoản miễn ph
 > `Quality of Life/Fixes`. Mod dịch ngôn ngữ không thuộc category nào chuyên
 > biệt → dùng `Other/Misc`.
 
+#### Tab **Ownership** — 2 checkbox bắt buộc trả lời đúng
+
+| Field | Trả lời | Lý do |
+|---|---|---|
+| **Is this a port?** | ✅ **Yes** | Mod dịch lại chuỗi gốc của Valve. Khai báo sai sẽ dính rule **R.10 Copyright**. |
+| **Did you create this mod?** | ✅ **Yes** | Bạn tự dịch và đóng gói. |
+
+#### Tab **Ownership** — Author Groups (Credits)
+
+GameBanana có sẵn 4 group mặc định. Giữ nguyên, không cần thêm/xóa:
+
+| Group | Author | Role |
+|---|---|---|
+| **Key Authors** | nickname GameBanana của bạn | `Vietnamese translation, VPK packaging` |
+| **Original Authors** | `Valve` | `Deadlock, original English localization strings` |
+| **Contributors** | (người đã giúp sửa/thẩm định bản dịch) | (mô tả ngắn) |
+| **Special Thanks** | (cộng đồng Deadlock Việt / người hỗ trợ) | (mô tả ngắn) |
+
+> **Quan trọng**: theo GameBanana, *"bad credits are probably the number 1
+> reason why Mods get withheld"* — điền đủ, không bỏ trống.
+>
+> Khai báo `Original Authors = Valve` + tick **Is this a port** là bộ ba
+> bảo vệ bạn khỏi rule R.10 (Copyright).
+>
+> **DMM hiển thị tên người đăng, không phải Author Groups** — DMM đọc
+> `_aSubmitter._sName` từ profile GameBanana. Nên **phải upload bằng chính
+> tài khoản GameBanana của bạn**; tên đó mới hiện trong DMM.
+
 **Mẫu description:**
 
 ```markdown

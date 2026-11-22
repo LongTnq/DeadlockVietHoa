@@ -234,6 +234,17 @@ Mo game. Hieu luc ngay.
 
 > Mot so hinh anh trong game (banner hero, bieu tuong thanh tich) chi co ban
 > tieng Anh - day la gioi han cua ban dich phan chu.
+
+## Credits
+
+- **Key Authors**: nickname GameBanana cua ban - ban dich tieng Viet, dong goi VPK
+- **Original Authors**: Valve - Deadlock, chuoi localization tieng Anh goc
+- **Contributors**: nguoi da giup sua hoac tham dinh ban dich
+- **Special Thanks**: cong dong Deadlock Viet
+
+## Source
+
+- **Ma nguon**: https://github.com/LongTnq/DeadlockVietHoa
 """
 
 
