@@ -40,10 +40,21 @@ PKG = os.path.join(RELEASE, 'deadlock-vietnamese')
 ZIP = os.path.join(RELEASE, 'deadlock-vietnamese.zip')
 VPKEDIT = r'C:\Program Files\VPKEdit\vpkeditcli.exe'
 
-# Hai bien the: (ten thu muc trong goi, hau to file, gia tri truong Language)
+# Chi mot bien the: English.
+#
+# Bien the "Tieng Viet" (file *_vietnamese.txt + `"vietnamese" "3"` trong
+# `gameinfo.gi`) bi loai bo vi:
+#   1. Game chi hien thi ngon ngữ khai bao trong `SupportedLanguages` cua
+#      `gameinfo.gi`. Steam khoi phuc file nay khi Verify integrity -> mat
+#      "Tieng Viet" trong Settings > Language.
+#   2. VPK trong `citadel/addons` chi duoc load neu `gameinfo.gi` co
+#      `Game citadel/addons` trong `SearchPaths` - cung bi Steam xoa.
+#
+# Bien the English giai quyet ca hai: nguoi dung giu ngon ngữ game la English
+# (da co san, khong can khai bao them), ma noi dung hien thi la tieng Viet.
+# `tools/patch_gameinfo.py` them lai dong `Game citadel/addons` khi can.
 VARIANTS = [
     ('english', '_english.txt', 'english'),
-    ('vietnamese', '_vietnamese.txt', 'vietnamese'),
 ]
 
 # Dieu kien `lang` trong fonts.conf cho tung bien the.
@@ -178,20 +189,21 @@ Ban dich tieng Viet cho game Deadlock (Valve).
 ### Cach 1 - Deadlock Mod Manager (khuyen nghi)
 
 1. Mo Deadlock Mod Manager -> **Mods Store** -> tim "Vietnamese Localization".
-2. Bam **Download Mod**, chon bien thai ban muon.
+2. Bam **Download Mod**.
 3. Mo **Mods Library** -> bat mod "Vietnamese Localization" -> **Enable**.
 4. Bam **Launch modded**.
 
 ### Cach 2 - Cai tay
 
-Giai nen `.zip` nay. Ban co hai thu muc:
+Giai nen `.zip` nay, ban duoc 2 file `.vpk`. Copy ca 2 vao
+`<game>/game/citadel/addons/`:
 
-| Thu muc | Dung khi | Cach dat |
-|---|---|---|
-| `vpk-english/` | Giu ngon ngu **English** trong game | Copy 2 file `.vpk` vao `<game>/game/citadel/addons/` |
-| `vpk-vietnamese/` | Chon ngon nug **Tieng Viet** trong game | Copy 2 file `.vpk` vao `<game>/game/citadel/addons/` |
+```text
+pak01_dir.vpk
+pak01_000.vpk
+```
 
-Sau khi copy, mo `<game>/game/citadel/gameinfo.gi` va them dong
+Sau do mo `<game>/game/citadel/gameinfo.gi` va them dong
 `Game citadel/addons` vao trong khoi `SearchPaths`, **truoc** dong
 `Game citadel`:
 
@@ -206,20 +218,20 @@ Sau khi copy, mo `<game>/game/citadel/gameinfo.gi` va them dong
 		}
 ```
 
+> Neu Steam da **Verify integrity of game files**, dong nay se bi xoa. them
+> lai hoac chay `tools/patch_gameinfo.py` tu ban phat hanh.
+
 Mo game. Hieu luc ngay.
 
 ## Luu y
 
-- **`vpk-english/`**: file localization tieng Anh cua game bi thay bang
-  ban dich. Game van hien thi "English" trong Settings > Language nhung noi
-  dung la tieng Viet.
-- **`vpk-vietnamese/`**: them file `*_vietnamese.txt`. Chon "Tieng Viet" trong
-  Settings > Language de hien thi. Neu game khong co muc "Tieng Viet",
-  dong `SupportedLanguages` trong `gameinfo.gi` can co dong
-  `"vietnamese" "3"`.
-- Hai bien the khong nen cai cung luc.
+- File localization tieng Anh cua game (`*_english.txt`) bi thay bang ban
+  dich. Game van hien thi "English" trong Settings > Language nhung **noi
+  dung la tieng Viet**.
+- Do do khong can them `"vietnamese"` vao `SupportedLanguages`, va khong co
+  muc "Tieng Viet" trong Settings > Language. Day la biet canh.
 - Mod khong sua file game goc. Hay **Verify integrity of game files** cua
-  Steam de khoi phuc neu can.
+  Steam de khoi phuc neu can (nho them lai dong `Game citadel/addons`).
 
 ## Noi dung da dich
 

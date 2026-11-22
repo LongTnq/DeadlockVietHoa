@@ -179,14 +179,16 @@ Hoặc cài tay: giải nén, copy 2 file `.vpk` vào
 `Steam\steamapps\common\Deadlock\game\citadel\addons\`, rồi thêm dòng
 `Game citadel/addons` vào `gameinfo.gi` (trước `Game citadel`).
 
-## Hai biến thể
+## Lưu ý về ngôn ngữ
 
-- `deadlock-vietnamese-english.zip` — **khuyên dùng**. Giữ ngôn ngữ game là
-  English, nội dung hiển thị tiếng Việt. Không cần sửa `gameinfo.gi`.
-- `deadlock-vietnamese-vietnamese.zip` — chọn "Tiếng Việt" trong
-  Settings > Language. Cần game hỗ trợ ngôn ngữ `vietnamese`.
+Game vẫn hiển thị "English" trong Settings > Language, nhưng **nội dung hiển
+thị là tiếng Việt**. Mod thay các file localization `*_english.txt` của
+game bằng bản dịch, nên không cần chọn ngôn ngữ khác và không cần sửa
+`gameinfo.gi` thêm.
 
-Chỉ cài **một** trong hai biến thể.
+> Nếu bạn đã từng **Verify integrity of game files** của Steam, hãy kiểm tra
+> `Deadlock\game\citadel\gameinfo.gi` có dòng `Game citadel/addons` trong
+> `SearchPaths` không — nếu thiếu thì mod sẽ không được load.
 
 ## Ghi chú
 
@@ -197,26 +199,36 @@ Chỉ cài **một** trong hai biến thể.
 ### Bước 3 — Files
 
 1. Vào mục **Files** của submission.
-2. Upload **cả 2 file** (mỗi biến thể một archive riêng):
+2. Upload **1 file**:
    - `release/deadlock-vietnamese-english.zip`
-   - `release/deadlock-vietnamese-vietnamese.zip`
 3. **Đặt tên file hiển thị:**
-   - `Deadlock Vietnamese Localization (English UI) v1.0.zip`
-   - `Deadlock Vietnamese Localization (Vietnamese UI) v1.0.zip`
+   - `Deadlock Vietnamese Localization v1.0.zip`
 4. **Loại file**: chọn `Mod` / `Archive`.
 5. Nếu GameBanana hiện nút **"Deadlock Mod Manager 1-click install"** →
    bật lên. Đây là nút mà DMM bắt tay vào.
 
-> **Tại sao tách 2 file riêng thay vì 1 ZIP gộp?**
-> GameBanana khuyến nghị tách mỗi biến thể cùng "slot" thành archive riêng
-> để 1-click installer cài được đúng biến thể người dùng chọn. DMM cũng tự
-> xử lý VPK trùng tên (đổi thành `pak01-blue_dir.vpk`, `pak01-blue-2_dir.vpk`)
-> nhưng người dùng sẽ phải tự chọn file trong DMM.
+> **Chỉ còn 1 biến thể (English).** Biến thể "Tiếng Việt" đã bị loại bỏ
+> vì nó phụ thuộc vào `gameinfo.gi` mà Steam hay khôi phục:
+>
+> | Cần gì | Kết quả nếu thiếu |
+> |---|---|
+> | `"vietnamese" "3"` trong `SupportedLanguages` | Mất mục "Tiếng Việt" trong Settings > Language |
+> | `Game citadel/addons` trong `SearchPaths` | VPK trong `addons/` **không được game load** |
+>
+> Cả 2 dòng này đều nằm trong `game/citadel/gameinfo.gi` — Steam xóa khi
+> **Verify integrity of game files**. Biến thể English không cần dòng nào:
+> người dùng giữ ngôn ngữ game là English (đã có sẵn), còn nội dung hiển
+> thị là tiếng Việt.
 >
 > **Cấu trúc ZIP:** file `.vpk` nằm ở **gốc** archive (không cần thư mục con).
 > DMM giải nén rồi tự tìm mọi file `.vpk` bên trong và copy vào
 > `citadel/addons/`. Xem source `vpk_manager/operations.rs`:
 > `collect_vpks_from_dir()` quét đệ quy mọi `.vpk`.
+>
+> **Lưu ý cho người dùng cài tay:** ngoài ZIP còn cần thêm dòng
+> `Game citadel/addons` vào `gameinfo.gi`. Script `tools/patch_gameinfo.py`
+> trong repo làm việc này (idempotent, tự backup). Nên đưa script này kèm
+> vào mô tả mod hoặc README trong ZIP.
 
 ### Bước 4 — Screenshots
 
