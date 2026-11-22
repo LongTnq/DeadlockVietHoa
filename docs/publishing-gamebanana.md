@@ -172,8 +172,7 @@ Bản dịch tiếng Việt cho game Deadlock (Valve).
 
 ## Cách dùng
 
-Cài qua **Deadlock Mod Manager** → Mods Store → Download Mod → Enable →
-Launch modded.
+Cài qua **Deadlock Mod Manager** → Mods Store → Download Mod → Enable → Launch modded.
 
 Hoặc cài tay: giải nén, copy 2 file `.vpk` vào
 `Steam\steamapps\common\Deadlock\game\citadel\addons\`, rồi thêm dòng
@@ -181,9 +180,9 @@ Hoặc cài tay: giải nén, copy 2 file `.vpk` vào
 
 ## Lưu ý về ngôn ngữ
 
-Game vẫn hiển thị "English" trong Settings > Language, nhưng **nội dung hiển
-thị là tiếng Việt**. Mod thay các file localization `*_english.txt` của
-game bằng bản dịch, nên không cần chọn ngôn ngữ khác và không cần sửa
+Game vẫn hiển thị **"English"** trong Settings > Language, nhưng **nội dung hiển
+thị là tiếng Việt**. Mod thay các file localization `*_english.txt` của game
+bằng bản dịch, nên không cần chọn ngôn ngữ khác và không cần sửa
 `gameinfo.gi` thêm.
 
 > Nếu bạn đã từng **Verify integrity of game files** của Steam, hãy kiểm tra
@@ -193,7 +192,8 @@ game bằng bản dịch, nên không cần chọn ngôn ngữ khác và không 
 ## Ghi chú
 
 - Không sửa file gốc của game.
-- Bản dịch nguồn mở, có thể tự chỉnh sửa và đóng góp.
+- Bản dịch nguồn mở. Nếu có sai sót dịch thuật, bạn có thể pull request
+  thông qua link GitHub: https://github.com/LongTnq/DeadlockVietHoa
 ```
 
 ### Bước 3 — Files
