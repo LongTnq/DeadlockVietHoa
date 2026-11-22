@@ -27,14 +27,10 @@ workspace/translations/
 # Gói phát hành GameBanana (chứa VPK ~21 MB — sinh ra, không commit).
 release/
 
-# File tạm trong tools/ (log, cache, kết quả chạy script)
-tools/_*.log
-tools/_*.txt
-tools/_tr_*.json
-tools/_vo_state.json
-tools/_all_english.json
-tools/*.bak
+# Script Python/PowerShell dùng nội bộ (không publish — chỉ là script thi
+# kế của tác giả). Giữ trên máy, không commit.
+tools/
 
-# File debug tạm trong workspace/
+# File tạm trong workspace/
 workspace/*.log
 workspace/*.txt

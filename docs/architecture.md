@@ -578,8 +578,8 @@ dotnet run --project src/DeadlockVN.CLI -- package `
 | `--no-patch-fonts` | Bỏ qua vá `fonts.conf` |
 | `--language <name>` | Đổi tên ngôn ngữ (mặc định `vietnamese`) |
 
-Chi tiết đóng gói VPK bằng VPKEdit / DMM: xem
-[`docs/packaging-guide.md`](packaging-guide.md).
+Chi tiết đóng gói VPK bằng VPKEdit / DMM: xem phần *Đóng gói VPK* trong
+tài liệu trên, hoặc chạy `dotnet run --project src/DeadlockVN.CLI -- package`.
 
 ---
 
